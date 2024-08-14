@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Overlay</title>
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+</head>
+
+<body style="padding: 0; margin: 0; background-color: transparent;">
+  <iframe src=""
+    style="display: block; width: 100vw; height: 100vh; background-color: transparent;"
+    frameborder="0"></iframe>
+  <script>
+    document.querySelector('iframe').name = Math.round(Math.random() * 10000);
+
+    const params = new URLSearchParams(window.location.search);
+    params.set("timestamp", Date.now())
+
+    document.querySelector('iframe').src = './overlay/index.html?' + params;
+  </script>
+
+  <script src="/js/neutralino.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
